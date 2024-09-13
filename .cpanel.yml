@@ -1,6 +1,35 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/goldengateresort/public_html/
-    - /bin/cp golden_gate_resort/src/index.html $DEPLOYPATH
-    - /bin/cp golden_gate_resort/src/output.css $DEPLOYPATH
+name: Deploy to cPanel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Tailwind CSS
+        run: npm run build
+
+      - name: Upload files via FTP to cPanel
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          ftp-server: "ftp://ftp.goldengateresortyala.com"
+          ftp-username: ${{ secrets.FTP_USERNAME }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: src
+          server-dir: public_html
+
