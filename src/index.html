@@ -5,13 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
 </head>
-<body>
-  <div class="justify-center">
-    <div class="flex justify-center height-3/4 ">
-      <img src="./images/logo.png" alt="" class="mx-auto">
+<body><button @click="cartOpen = !cartOpen" class="text-gray-600 focus:outline-none mx-4 sm:mx-0">
+                    
+</button>
+  <header>
+    <div class="container mx-auto px-6">
+        <div class="flex items-center justify-between">
+            <div class="mx-auto">
+                <img src="./images/logo.png" alt="logo" class="h-48 w-48">
+            </div>
+        </div>
+        <div class="flex justify-center items-center py-4 text-2xl">
+          <nav class="isOpen ? '' : 'hidden'">
+              <div class="flex flex-col sm:flex-row justify-center items-center gap-x-14">
+                  <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0 mx-8" href="#">About</a>
+                  <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">Amenities</a>
+                  <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">Pricing</a>
+                  <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">Contact</a>
+                  <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">Book With Us</a>
+              </div>
+          </nav>
+      </div>
+      
     </div>
-    <div class="height-1/4 p-2 text-center text-5xl font-bold">
-      Coming Soon
+</header>
+  <div class="justify-center mt-24">
+    <div class="">
+      <div class="height-1/4 p-2 text-center text-5xl font-bold underline">
+        Work in progress ...
+      </div>
     </div>
   </div>
 </body>
