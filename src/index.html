@@ -20,30 +20,67 @@
       </div>
     </div>
   </div>
-  <header>
-    <div class="container mx-auto px-6">
-        <div class="flex items-center justify-between">
-            <div class="mx-auto">
-                <img src="./images/logo_bg.png" alt="logo" class="h-22 w-44">
-            </div>
-        </div>
-        <div class="flex justify-center items-center py-4 text-lg">
-          <nav class="isOpen ? '' : 'hidden'">
-              <div class="flex flex-col sm:flex-row justify-center items-center gap-x-14">
-                  <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0 mx-8" href="#">About</a>
-                  <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#amenities">Amenities</a>
-                  <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">Pricing</a>
-                  <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#contact">Contact</a>
-                  <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">Book With Us</a>
-              </div>
-          </nav>
+  <header class='shadow-md bg-white font-sans tracking-wide relative z-50'>
+    <section
+      class='flex items-center lg:justify-center flex-wrap gap-5 relative py-3 px-10 border-gray-200 border-b lg:min-h-[80px] max-lg:min-h-[60px]'>
+      <a href="javascript:void(0)"><img src="./images/logo_bg.png" alt="logo"
+          class='md:w-[170px] w-36' />
+      </a>
+    </section>
+  
+    <div class='flex flex-wrap py-3.5 px-10 overflow-x-auto'>
+  
+      <div id="collapseMenu"
+        class='w-full max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50'>
+        <button id="toggleClose" class='lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3'>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 fill-black" viewBox="0 0 320.591 320.591">
+            <path
+              d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
+              data-original="#000000"></path>
+            <path
+              d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
+              data-original="#000000"></path>
+          </svg>
+        </button>
+  
+        <ul
+          class='lg:flex lg:justify-center lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50'>
+          <li class='mb-6 hidden max-lg:block'>
+            <a href="javascript:void(0)"><img src="images/logo_bg.png" alt="logo" class='w-36' />
+            </a>
+          </li>
+          <li class='max-lg:border-b max-lg:py-3'><a href='#home'
+              class='hover:text-[#007bff] text-[#007bff] font-bold text-[15px] block'>Home</a></li>
+          <li class='max-lg:border-b max-lg:py-3'><a href='#about'
+            class='hover:text-[#007bff] text-[#007bff] font-bold text-[15px] block'>About</a></li>
+          <li class='max-lg:border-b max-lg:py-3'><a href='#amenities'
+              class='hover:text-[#007bff] text-gray-500 font-bold text-[15px] block'>Amenities</a></li>
+          <li class='max-lg:border-b max-lg:py-3'><a href='#attractions'
+              class='hover:text-[#007bff] text-gray-500 font-bold text-[15px] block'>Attractions</a></li>
+          <li class='max-lg:border-b max-lg:py-3'><a href='#facilities'
+            class='hover:text-[#007bff] text-gray-500 font-bold text-[15px] block'>Facilities</a></li>
+          <li class='max-lg:border-b max-lg:py-3'><a href='#contact'
+              class='hover:text-[#007bff] text-gray-500 font-bold text-[15px] block'>Book With Us</a></li>
+          <li class='max-lg:border-b max-lg:py-3'><a href='#contact'
+              class='hover:text-[#007bff] text-gray-500 font-bold text-[15px] block'>Contact Us</a></li>
+          
+        </ul>
       </div>
-      
+  
+      <div class='flex ml-auto lg:hidden'>
+        <button id="toggleOpen">
+          <svg class="w-7 h-7" fill="#000" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
     </div>
-</header>
+  </header>
 
 
-<section class="">
+<section class="" id="home">
   <div class="w-full relative">
     <div class="swiper fraction-slide-carousel swiper-container relative ">
     <div class="swiper-wrapper ">
@@ -96,122 +133,137 @@
     </div>
 </section>
 
+<section id="about" class="py-8 md:py-12 lg:py-36 bg-yellow-100">
+  <div class="max-w-5xl  mx-auto font-[sans-serif]">
+    <h2 class="text-gray-800 sm:text-4xl text-2xl font-extrabold text-center mb-16">About Us</h2>
+    <div class="grid gtrid-col-1 md:grid-cols-2">
+      <div class=" flex">
+        <div class="w-1/2 ">
+          <img src="./images/garden.jpg" alt="gazebo garden" class="h-80 w-full mt-10 object-cover rounded-lg p-6">
+        </div>
+        <div class="w-1/2">
+          <img src="./images/front.jpg" alt="lobby" class="h-96 w-full object-cover rounded-lg pr-2">
+        </div>
+      </div>
+      <div class="px-6">
+        <h3 class="text-gray-800 text-4xl font-semibold mb-3 underline decoration-yellow-600">Golden Gate Resort</h3>
+        <p class="text-gray-600 text-lg pt-8">Golden Gate Resort is a luxurious hotel located in the heart of Yala, Siaya County. We offer a wide range of services and amenities to make your stay with us as comfortable as possible. Our rooms are designed to make you feel at home, with all the modern conveniences you need. We look forward to welcoming you to Golden Gate Resort.</p>
+      </div>
+    </div>
+  </div>
 
-<!-- Amenities -->
-<!-- <section>
-  <div class="text-center px-6">
-    <h2 class="text-gray-800 text-3xl font-extrabold">Amenities</h2>
+</section>
+
+<section id="amenities">
+  <div class="max-w-[100vw] md:max-w-[90vw] lg:max-w-[75vw] mx-auto">
+    <div class="pt-8 text-4xl text-center font-bold underline decoration-yellow-600">
+      Feature Amenities
+    </div>
+    <div class="flex flex-col-1">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="flex flex-col-reverse md:flex-row items-center justify-between py-3 md:py-6 lg:py-12">
+          
+          <!-- Text/Description Section -->
+          <div class="w-full md:w-1/2 md:pr-10">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">Luxury Accommodation</h2>
+            <p class="text-lg text-gray-600 mb-6">
+              Discover the finest rooms, offering unparalleled comfort with stunning views of the famous Yala topography and lush tropical landscapes. Whether you're here for relaxation or adventure, our accommodations provide the perfect blend of luxury and serenity to suit every visitor's needs.
+            </p>
+            
+            <!-- <button class="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all">
+              Explore More
+            </button> -->
+          </div>
     
+          <!-- Image Section -->
+          <div class="w-full md:w-1/2 mb-8 md:mb-0">
+            <img src="./images/Hotel room 2.jpg" alt="Resort Accommodation" class="rounded-lg shadow-lg object-cover w-full h-full">
+          </div>
+        </div>
+      </div>
+    </div> 
+    <!-- Restaurant -->
+
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="flex flex-col items-center justify-between">
+        <h2 class="text-4xl font-extrabold text-gray-800 mb-8">Dining Experience</h2>
+        
+        <!-- Image Section -->
+        <div class="w-full mb-8 md:mb-0 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <img src="./images/ugali nyama.jpg" alt="Dining Experience" class="rounded-lg shadow-lg object-cover w-full h-full">
+          <img src="./images/fish.jpg" alt="Gourmet Food" class="rounded-lg shadow-lg object-cover w-full h-full">
+          <img src="./images/chicken.jpg" alt="Chef's Special" class="rounded-lg shadow-lg object-cover w-full h-full">
+        </div>
+  
+        <!-- Text/Description Section -->
+        <div class="w-full  md:pl-10">
+          
+          <p class="text-lg text-gray-600 my-6">
+            Indulge in a culinary journey like no other. Our kitchen offers a selection of exquisite dishes crafted with fresh, locally sourced ingredients, blending international flavors with a touch of local flair. Enjoy an unforgettable dining experience with breathtaking views.
+          </p>
+        </div>
+        
+      </div>
+    </div>
   </div>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-center">
+  
+</section>
+
+<section id="attractions" class="bg-gray-100 py-12">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold mb-8">Explore Gem Yala</h2>
+
+    <!-- Attractions Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       
-      <div class="bg-white  p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
-          <div class="min-h-[100px]">
-              <img src="./images/accommodation.png" alt="accommodation icon" class="h-12 items-center mx-auto">
-          </div>
-          <div class="px-6 text-center">
-            <h3 class="text-xl font-bold mx-auto">Accommodation</h3>
-            
-          </div>
+      <!-- Ndanu Falls -->
+      <div
+        class="bg-white shadow-lg border p-4 rounded-lg font-[sans-serif] overflow-hidden mx-auto max-w-sm sm:max-w-none transition-transform transform hover:scale-105">
+        <div class="min-h-[245px]">
+          <img src="./images/falls.jpg" alt="Ndanu Falls" class="w-full rounded-lg object-cover" />
         </div>
-        
-        <div class="bg-white s p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
-          <div class="min-h-[100px]">
-            <img src="./images/restaurant.png" alt="restaurant icon" class="h-24 items-center mx-auto">
-          </div>
-          <div class="px-6 text-center">
-            <h3 class="text-xl font-bold">Restaurant</h3>
-            
-          </div>
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-bold">Ndanu Falls</h3>
+          <p class="mt-3 text-sm text-gray-500 leading-relaxed">Experience the breathtaking cascades of Ndanu Falls as part of the great River Yala's journey into Yala Swamp.</p>
+          <!-- <button type="button"
+            class="mt-6 px-5 py-2.5 w-full rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-blue-600 hover:bg-blue-700">Visit</button> -->
         </div>
-        
-        <div class="bg-white s p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
-          <div class="min-h-[100px]">
-            <img src="./images/bar.png" alt="bar icon" class="h-24 items-center mx-auto">
-          </div>
-          <div class="px-6 text-center">
-            <h3 class="text-xl font-bold">Bar</h3>
-            
-          </div>
+      </div>
+
+      <!-- River Yala -->
+      <div
+        class="bg-white shadow-lg border p-4 rounded-lg font-[sans-serif] overflow-hidden mx-auto max-w-sm sm:max-w-none transition-transform transform hover:scale-105">
+        <div class="min-h-[245px]">
+          <img src="./images/river.jpg" alt="River Yala" class="w-full rounded-lg object-cover" />
         </div>
-        
-        <div class="bg-white s p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
-          <div class="min-h-[100px]">
-            <img src="./images/wifi.png" alt="wifi icon" class="h-24 items-center mx-auto">
-          </div>
-          <div class="px-6 text-center">
-            <h3 class="text-xl font-bold">Wifi</h3>
-           
-          </div>
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-bold">River Yala</h3>
+          <p class="mt-3 text-sm text-gray-500 leading-relaxed">Immerse yourself in the views and sounds of the River Yala as it wades through obstacles downslope.</p>
         </div>
-        
-        <div class="bg-white s p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
-          <div class="min-h-[100px]">
-            <img src="./images/parking.png" alt="parking icon" class="h-24 items-center mx-auto">
-          </div>
-          <div class="px-6 text-center">
-            <h3 class="text-xl font-bold">Free Parking</h3>
-            
-          </div>
+      </div>
+
+      <!-- Yala Swamp -->
+      <div
+        class="bg-white shadow-lg border p-4 rounded-lg font-[sans-serif] overflow-hidden mx-auto max-w-sm sm:max-w-none transition-transform transform hover:scale-105">
+        <div class="min-h-[245px]">
+          <img src="./images/swamp.jpg" alt="Yala Swamp" class="w-full rounded-lg object-cover" />
         </div>
-        
-        <div class="bg-white s p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
-          <div class="min-h-[100px]">
-            <img src="./images/conference.png" alt="conference icon" class="h-24 items-center mx-auto">
-          </div>
-          <div class="px-6 text-center">
-            <h3 class="text-xl font-bold">Conference</h3>
-            
-          </div>
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-bold">Yala Swamp</h3>
+          <p class="mt-3 text-sm text-gray-500 leading-relaxed">Take in the panoramic views of the great Yala swamp from a distance.</p>
         </div>
-       
-        <div class="bg-white s p -2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
-          <div class="min-h-[100px]">
-            <img src="./images/laundry.png" alt="laundry icon" class="h-24 items-center mx-auto">
-          </div>
-          <div class="px-6 text-center">
-            <h3 class="text-xl font-bold">Laundry</h3>
-            
-          </div>
-        </div>
-       
-        <div class="bg-white s p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
-          <div class="min-h-[100px]">
-            <img src="./images/fitness.png" alt="fitness icon" class="h-24 items-center mx-auto">
-          </div>
-          <div class="px-6 text-center">
-            <h3 class="text-xl font-bold">Wellness</h3>
-            
-          </div>
-        </div>
-        
-        <div class="bg-white s p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
-          <div class="min-h-[100px] w-full">
-            <img src="./images/events.png" alt="events icon" class="h-24 items-center mx-auto">
-          </div>
-          <div class="px-6 text-center">
-            <h3 class="text-xl font-bold">Outdoor Events</h3>
-            
-          </div>
-        </div>
-        
-        <div class="bg-white s p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
-          <div class="min-h-[100px]">
-            <img src="./images/pet_friendly.png" alt="pet_friendly icon" class="h-24 items-center mx-auto">
-          </div>
-          <div class="px-6 text-center">
-            <h3 class="text-xl font-bold">Pet Friendly Space</h3>
-            
-          </div>
-        </div>
+      </div>
+      
+    </div>
   </div>
-</section> -->
+</section>
 
 
-<section id="amenities" class="my-28">
+
+<section id="facilities" class="my-14">
   <div class="max-w-full mx-auto font-[sans-serif]">
-    <h2 class="text-gray-800 sm:text-4xl text-2xl font-extrabold text-center mb-16">Discover Our Exclusive Features</h2>
-    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-12">
+    <h2 class="text-gray-800 sm:text-4xl text-2xl font-extrabold text-center mb-16">Discover Our Exclusive Facilities</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
       <div class="text-center">
         <img src="./images/accommodation.png" alt="accommodation icon" class="h-16 items-center mx-auto">
         <h3 class="text-gray-800 text-xl font-semibold mb-3">Accommodation</h3>
@@ -567,6 +619,22 @@
         }
       },
       });
+      </script>
+      <script>
+        var toggleOpen = document.getElementById('toggleOpen');
+        var toggleClose = document.getElementById('toggleClose');
+        var collapseMenu = document.getElementById('collapseMenu');
+
+        function handleClick() {
+          if (collapseMenu.style.display === 'block') {
+            collapseMenu.style.display = 'none';
+          } else {
+            collapseMenu.style.display = 'block';
+          }
+        }
+
+        toggleOpen.addEventListener('click', handleClick);
+        toggleClose.addEventListener('click', handleClick);
       </script>
 </body>
 </html>
