@@ -10,6 +10,14 @@
 
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function(){
+        // Initialize EmailJS with your user ID
+        emailjs.init("YOUR_USER_ID"); 
+      })();
+    </script>
   <link href="./output.css" rel="stylesheet">
 </head>
 <body>
@@ -740,6 +748,32 @@
 
         toggleOpen.addEventListener('click', handleClick);
         toggleClose.addEventListener('click', handleClick);
+      </script>
+
+      <!-- Mail script -->
+      <script>
+        // Function to send email using EmailJS
+        document.getElementById('booking-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+          
+          // Create a new form object to include the selected country code with the phone number
+          var formData = new FormData(this);
+          var fullPhoneNumber = document.getElementById('country-code').value + document.getElementById('phone').value;
+          formData.set('phone', fullPhoneNumber); // Update the phone field with the complete phone number
+    
+          // Send the form data using EmailJS
+          emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+            .then(function(response) {
+              console.log('SUCCESS!', response.status, response.text);
+              document.getElementById('form-response').innerHTML = '<p class="text-green-500">Booking successful! We will contact you soon.</p>';
+            }, function(error) {
+              console.log('FAILED...', error);
+              document.getElementById('form-response').innerHTML = '<p class="text-red-500">An error occurred. Please try again later.</p>';
+            });
+          
+          // Reset the form
+          this.reset();
+        });
       </script>
 </body>
 </html>
