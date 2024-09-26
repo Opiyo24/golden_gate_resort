@@ -9,6 +9,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.7/css/flag-icon.min.css" rel="stylesheet">
 
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/emailjs.min.js"></script>
 
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -173,9 +174,9 @@
     </div>
     <div class="swiper-pagination"></div>
     </div>
-    <div id="banner" class="absolute inset-y-auto bottom-3 inset-x-0 z-10 bg-yellow-200 w-1/2 text-2xl items-center rounded-lg mx-auto flex grid-cols-5 border-4 border-black md:w-3/4 lg:w-4/5">
+    <div id="banner" class="absolute inset-y-auto bottom-3 inset-x-0 z-10 bg-yellow-200 w-2/3 text-2xl items-center rounded-lg mx-auto flex grid-cols-5 border-4 border-black md:w-3/4 lg:w-4/5">
       <!-- Fast check in -->
-       <div class="w-3/5 md:w-4/5 flex py-4 px-3">
+       <div class="w-4/5 flex py-4 px-3">
         <div class="text-center w-1/4">
           <i class="fa-regular fa-square-check"></i>
           <p class="hidden md:flex mx-auto md:text-lg justify-center">Fast Check-In</p>
@@ -193,8 +194,8 @@
           <p class="hidden md:flex text-lg justify-center">Internet</p>
         </div>
        </div>
-      <div class="h-full mr-0 bg-yellow-800 text-white hover:bg-yellow-500 hover:text-black py-4 font-bold overflow-hidden rounded-lg md:px-3 lg:px-4 text-lg md:text-2xl">
-        <a href="#booking">Book now</a>
+      <div class="h-full w-1/5 mr-1 bg-yellow-800 text-white hover:bg-yellow-500 hover:text-black py-4 font-bold overflow-hidden rounded-lg md:px-3 lg:px-4 text-lg md:text-xl lg:text-2xl">
+        <a href="#booking" class="mx-auto">Book now</a>
       </div>
     </div>
     </div>
@@ -302,8 +303,8 @@
   <div class="bg-white bg-opacity-20 backdrop-blur-lg p-8 rounded-lg shadow-lg w-full max-w-4xl mx-auto">
     <h1 class="text-3xl font-bold mb-6 text-center text-black">Book Your Stay</h1>
     <form id="booking-form" class="space-y-4">
-      <div class="flex">
-        <div class="w-1/2 px-5">
+      <div class="grid-cols-1 md:flex">
+        <div class="w-full md:w-1/2 px-5">
           <div class="">
             <label for="name" class="block text-lg font-medium text-black">Name</label>
             <input type="text" id="name" name="name" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
@@ -328,7 +329,7 @@
             </div>
           </div>
         </div>
-        <div class="w-1/2 px-5">
+        <div class="w-full md:w-1/2 px-5">
           <div>
             <label for="checkin" class="block text-lg font-medium text-black">Check-in Date</label>
             <input type="date" id="checkin" name="checkin" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
@@ -380,7 +381,7 @@
       <div
         class="bg-white shadow-lg border p-4 rounded-lg font-[sans-serif] overflow-hidden mx-auto max-w-sm sm:max-w-none transition-transform transform hover:scale-105">
         <div class="min-h-[245px]">
-          <img src="./images/r_yala.jpg" alt="River Yala" class="w-full rounded-lg object-cover" />
+          <img src="./images/river.png" alt="River Yala" class="w-full rounded-lg object-cover" />
         </div>
         <div class="p-6 text-center">
           <h3 class="text-xl font-bold">River Yala</h3>
@@ -800,7 +801,7 @@
       </script>
 
       <!-- Mail script -->
-      <script>
+      <!-- <script>
         // Function to send email using EmailJS
         document.getElementById('booking-form').addEventListener('submit', function(event) {
           event.preventDefault();
@@ -823,6 +824,71 @@
           // Reset the form
           this.reset();
         });
+      </script> -->
+      <script>
+        document.getElementById('booking-form').addEventListener('submit', function(event) {
+          console.log('Form submitted');
+          event.preventDefault(); // Prevent default form submission
+      
+          // Get form values
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const phone = document.getElementById('phone').value;
+          const countryCode = document.getElementById('country-code').value;
+          const checkin = document.getElementById('checkin').value;
+          const checkout = document.getElementById('checkout').value;
+          const guests = document.getElementById('guests').value;
+          const message = document.getElementById('message').value;
+      
+          // Create email content
+          const emailBody = `
+            Name: ${name}
+            Email: ${email}
+            Phone: ${countryCode} ${phone}
+            Check-in Date: ${checkin}
+            Check-out Date: ${checkout}
+            Guests: ${guests}
+            Additional Message:
+            ${message}
+          `;
+      
+          // Email.js configuration (replace with your own)
+          const serviceID = 'service_o1uvwm5';
+          const templateID = 'template_ftqtvr3';
+          const userID = 'GP51pirUsOTl5Hcfv';
+      
+          // Send email using Email.js
+          emailjs.send(serviceID, templateID, {
+            from_name: name,
+            to_name: 'Golden Gate Resort - Yala',
+            reply_to: email,
+            to_email: 'admin@goldengateresortyala.com',
+            subject: 'Booking Inquiry',
+            message: emailBody
+          }, userID)
+            .then(() => {
+              // Show success message
+              document.getElementById('form-response').textContent = 'Your booking inquiry has been sent successfully!';
+              document.getElementById('booking-form').reset();
+            })
+            .catch(error => {
+              // Show error message
+              console.error('Error sending email:', error);
+              document.getElementById('form-response').textContent = 'An error occurred. Please try again later.';
+            });
+        });
       </script>
+      <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "GP51pirUsOTl5Hcfv",
+      });
+   })();
+</script>
+
+      
 </body>
 </html>
