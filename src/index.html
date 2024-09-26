@@ -303,8 +303,8 @@
   <div class="bg-white bg-opacity-20 backdrop-blur-lg p-8 rounded-lg shadow-lg w-full max-w-4xl mx-auto">
     <h1 class="text-3xl font-bold mb-6 text-center text-black">Book Your Stay</h1>
     <form id="booking-form" class="space-y-4">
-      <div class="flex">
-        <div class="w-1/2 px-5">
+      <div class="grid-cols-1 md:flex">
+        <div class="w-full md:w-1/2 px-5">
           <div class="">
             <label for="name" class="block text-lg font-medium text-black">Name</label>
             <input type="text" id="name" name="name" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
@@ -329,7 +329,7 @@
             </div>
           </div>
         </div>
-        <div class="w-1/2 px-5">
+        <div class="w-full md:w-1/2 px-5">
           <div>
             <label for="checkin" class="block text-lg font-medium text-black">Check-in Date</label>
             <input type="date" id="checkin" name="checkin" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
@@ -381,7 +381,7 @@
       <div
         class="bg-white shadow-lg border p-4 rounded-lg font-[sans-serif] overflow-hidden mx-auto max-w-sm sm:max-w-none transition-transform transform hover:scale-105">
         <div class="min-h-[245px]">
-          <img src="./images/r_yala.jpg" alt="River Yala" class="w-full rounded-lg object-cover" />
+          <img src="./images/river.png" alt="River Yala" class="w-full rounded-lg object-cover" />
         </div>
         <div class="p-6 text-center">
           <h3 class="text-xl font-bold">River Yala</h3>
